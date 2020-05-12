@@ -1,7 +1,7 @@
 require 'erb'
 require 'fileutils'
 
-module GemWrappers
+module NlmtWrappers
   class Installer
     attr_reader :environment_file
 
@@ -38,11 +38,11 @@ module GemWrappers
     def install(executable)
       target_path = find_executable_path(executable)
       unless target_path
-        warn "GemWrappers: Can not wrap missing file: #{executable}"
+        warn "NlmtWrappers: Can not wrap missing file: #{executable}"
         return
       end
       unless File.executable?(target_path)
-        warn "GemWrappers: Can not wrap not executable file: #{target_path}"
+        warn "NlmtWrappers: Can not wrap not executable file: #{target_path}"
         return
       end
       @executable = executable

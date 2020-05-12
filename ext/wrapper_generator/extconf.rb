@@ -13,7 +13,7 @@ $: << File.expand_path("../../../lib", __FILE__)
 
 # load the command
 require 'rubygems'
-require 'gem-wrappers/command'
+require 'nlmt-wrappers/command'
 
 # call the actions
 command = WrappersCommand.new

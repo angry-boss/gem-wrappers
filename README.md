@@ -1,11 +1,11 @@
 # Gem wrappers
 
-[![Gem Version](https://badge.fury.io/rb/gem-wrappers.png)](http://rubygems.org/gems/gem-wrappers)
-[![Code Climate](https://codeclimate.com/github/rvm/gem-wrappers.png)](https://codeclimate.com/github/rvm/gem-wrappers)
-[![Coverage Status](https://coveralls.io/repos/rvm/gem-wrappers/badge.png?branch=master)](https://coveralls.io/r/rvm/gem-wrappers?branch=master)
-[![Build Status](https://travis-ci.org/rvm/gem-wrappers.png?branch=master)](https://travis-ci.org/rvm/gem-wrappers)
-[![Dependency Status](https://gemnasium.com/rvm/gem-wrappers.png)](https://gemnasium.com/rvm/gem-wrappers)
-[![Documentation](http://b.repl.ca/v1/yard-docs-blue.png)](http://rubydoc.info/gems/gem-wrappers/frames)
+[![Gem Version](https://badge.fury.io/rb/nlmt-wrappers.png)](http://rubygems.org/gems/nlmt-wrappers)
+[![Code Climate](https://codeclimate.com/github/rvm/nlmt-wrappers.png)](https://codeclimate.com/github/rvm/nlmt-wrappers)
+[![Coverage Status](https://coveralls.io/repos/rvm/nlmt-wrappers/badge.png?branch=master)](https://coveralls.io/r/rvm/nlmt-wrappers?branch=master)
+[![Build Status](https://travis-ci.org/rvm/nlmt-wrappers.png?branch=master)](https://travis-ci.org/rvm/nlmt-wrappers)
+[![Dependency Status](https://gemnasium.com/rvm/nlmt-wrappers.png)](https://gemnasium.com/rvm/nlmt-wrappers)
+[![Documentation](http://b.repl.ca/v1/yard-docs-blue.png)](http://rubydoc.info/gems/nlmt-wrappers/frames)
 
 Create gem wrappers for easy use of gems in cron and other system locations.
 
@@ -14,7 +14,7 @@ Create gem wrappers for easy use of gems in cron and other system locations.
 This gem should be available in RVM `1.25+`, to install manually:
 
 ```bash
-gem install gem-wrappers
+gem install nlmt-wrappers
 ```
 
 ## Configuration / Defaults
@@ -46,7 +46,7 @@ wrappers will be generated in `$GEM_HOME/wrappers/`.
 Install popular http server `unicorn`:
 
 ```bash
-gem install gem-wrappers # assuming it was not installed already
+gem install nlmt-wrappers # assuming it was not installed already
 gem install unicorn
 ```
 

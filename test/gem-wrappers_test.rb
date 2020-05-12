@@ -1,17 +1,17 @@
 require 'test_helper'
 require 'tempfile'
-require 'gem-wrappers'
-require 'gem-wrappers/fakes'
+require 'nlmt-wrappers'
+require 'nlmt-wrappers/fakes'
 
-describe GemWrappers do
+describe NlmtWrappers do
   subject do
-    GemWrappers
+    NlmtWrappers
   end
 
   describe "fake" do
     before do
-      @fake_installer    = GemWrappers::FakeInstaller.new
-      @fake_environment = GemWrappers::FakeEnvironment.new
+      @fake_installer    = NlmtWrappers::FakeInstaller.new
+      @fake_environment = NlmtWrappers::FakeEnvironment.new
       subject.instance_variable_set(:@installer,   @fake_installer)
       subject.instance_variable_set(:@environment, @fake_environment)
     end
@@ -111,13 +111,13 @@ GEMRC
       File.open(@rake_wrapper, "w") { |f| f.write("") }
       proc {
         subject.wrapper_path("rak2e")
-      }.must_raise(GemWrappers::NoWrapper)
+      }.must_raise(NlmtWrappers::NoWrapper)
     end
 
     it "doesn't find rake path when missing" do
       proc {
         subject.wrapper_path("rak2e")
-      }.must_raise(GemWrappers::NoWrapper)
+      }.must_raise(NlmtWrappers::NoWrapper)
     end
   end
 

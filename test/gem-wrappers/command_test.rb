@@ -1,8 +1,8 @@
 require 'test_helper'
 require 'pathname'
 require 'tempfile'
-require 'gem-wrappers/command'
-require 'gem-wrappers/fakes'
+require 'nlmt-wrappers/command'
+require 'nlmt-wrappers/fakes'
 
 describe WrappersCommand do
   subject do
@@ -12,7 +12,7 @@ describe WrappersCommand do
   let(:gems) { %w[rake ruby] }
 
   before do
-    @fake_wrappers = GemWrappers::Fake.new(gems)
+    @fake_wrappers = NlmtWrappers::Fake.new(gems)
     subject.instance_variable_set(:@gem_wrappers, @fake_wrappers)
     $stdout = StringIO.new
     $stderr = StringIO.new

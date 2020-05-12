@@ -1,34 +1,34 @@
 require 'test_helper'
 require 'tempfile'
-require 'gem-wrappers/environment'
+require 'nlmt-wrappers/environment'
 
-describe GemWrappers::Environment do
+describe NlmtWrappers::Environment do
   describe "configuration" do
     it "uses default file" do
       Gem.configuration[:wrappers_environment_file] = nil
-      GemWrappers::Environment.file_name.must_equal(File.join(Gem.dir, "environment"))
-      GemWrappers::Environment.new.file_name.must_equal(GemWrappers::Environment.file_name)
+      NlmtWrappers::Environment.file_name.must_equal(File.join(Gem.dir, "environment"))
+      NlmtWrappers::Environment.new.file_name.must_equal(NlmtWrappers::Environment.file_name)
     end
     it "reads configured file" do
       Gem.configuration[:wrappers_environment_file] = "/path/to/environment"
-      GemWrappers::Environment.file_name.must_equal("/path/to/environment")
-      GemWrappers::Environment.new.file_name.must_equal("/path/to/environment")
+      NlmtWrappers::Environment.file_name.must_equal("/path/to/environment")
+      NlmtWrappers::Environment.new.file_name.must_equal("/path/to/environment")
       Gem.configuration[:wrappers_environment_file] = nil
     end
     it "uses default take" do
       Gem.configuration[:wrappers_path_take] = nil
-      GemWrappers::Environment.new.path_take.must_equal(Gem.path.size + 1)
+      NlmtWrappers::Environment.new.path_take.must_equal(Gem.path.size + 1)
     end
     it "reads configured take" do
       Gem.configuration[:wrappers_path_take] = 0
-      GemWrappers::Environment.new.path_take.must_equal(Gem.path.size)
+      NlmtWrappers::Environment.new.path_take.must_equal(Gem.path.size)
       Gem.configuration[:wrappers_path_take] = nil
     end
   end
 
   describe "instance" do
     subject do
-      GemWrappers::Environment.new
+      NlmtWrappers::Environment.new
     end
 
     before do

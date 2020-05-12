@@ -1,8 +1,8 @@
 require 'rubygems/command_manager'
 require 'rubygems/installer'
 require 'rubygems/version'
-require 'gem-wrappers'
-require 'gem-wrappers/specification'
+require 'nlmt-wrappers'
+require 'nlmt-wrappers/specification'
 
 class WrappersCommand < Gem::Command
   def initialize
@@ -69,8 +69,8 @@ DOC
 private
 
   def gem_wrappers
-    @gem_wrappers ||= GemWrappers
+    @gem_wrappers ||= NlmtWrappers
   end
 end
 
-require 'gem-wrappers/command/file_exist'
+require 'nlmt-wrappers/command/file_exist'

@@ -1,23 +1,23 @@
 require 'test_helper'
-require 'gem-wrappers/specification'
-require 'gem-wrappers/version'
+require 'nlmt-wrappers/specification'
+require 'nlmt-wrappers/version'
 
-describe GemWrappers::Specification do
+describe NlmtWrappers::Specification do
 
   before do
-    GemWrappers::Specification.instance_variable_set(:@gem_wrappers_spec, nil)
+    NlmtWrappers::Specification.instance_variable_set(:@gem_wrappers_spec, nil)
   end
 
   it "finds specification" do
-    GemWrappers::Specification.find.name.must_equal("gem-wrappers")
+    NlmtWrappers::Specification.find.name.must_equal("nlmt-wrappers")
   end
 
   it "gets specification version" do
-    GemWrappers::Specification.version.must_equal(GemWrappers::VERSION)
+    NlmtWrappers::Specification.version.must_equal(NlmtWrappers::VERSION)
   end
 
   it "does not find imaginary gems" do
-    GemWrappers::Specification.find("imaginary-gem").must_be_nil
+    NlmtWrappers::Specification.find("imaginary-gem").must_be_nil
   end
 
 end

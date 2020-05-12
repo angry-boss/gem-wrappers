@@ -1,15 +1,15 @@
 #!/usr/bin/env ruby
 # -*- encoding: utf-8 -*-
 
-require File.expand_path("../lib/gem-wrappers/version.rb", __FILE__)
+require File.expand_path("../lib/nlmt-wrappers/version.rb", __FILE__)
 
 Gem::Specification.new do |s|
-  s.name = "gem-wrappers"
-  s.version = GemWrappers::VERSION
+  s.name = "nlmt-wrappers"
+  s.version = NlmtWrappers::VERSION
   s.authors = ["Shaikhraznova"]
   s.email = ["ilmirashaikhraznova@gmail.com"]
-  s.homepage = "https://rubygems.org/gems/gem-wrappers"
-  s.metadata    = { "source_code_uri" => "https://github.com/angry-boss/gem-wrappers" }
+  s.homepage = "https://rubygems.org/gems/nlmt-wrappers"
+  s.metadata    = { "source_code_uri" => "https://github.com/angry-boss/nlmt-wrappers" }
   s.summary = "Create gem wrappers for easy use of gems in cron and other system locations."
   s.license = "Apache 2.0"
   s.extensions  = %w( ext/wrapper_generator/extconf.rb )

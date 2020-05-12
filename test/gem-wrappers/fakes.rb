@@ -1,4 +1,4 @@
-module GemWrappers
+module NlmtWrappers
   class FakeInstaller
     def initialize
       @executables = []
@@ -58,7 +58,7 @@ module GemWrappers
       if @gems.include?(exe)
         file
       else
-        raise GemWrappers::NoWrapper, "No wrapper: #{file}"
+        raise NlmtWrappers::NoWrapper, "No wrapper: #{file}"
       end
     end
     def installed_wrappers

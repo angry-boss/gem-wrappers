@@ -1,4 +1,4 @@
-module GemWrappers
+module NlmtWrappers
   module Specification
     def self.installed_gems
       if Gem::VERSION > '1.8' then
@@ -8,7 +8,7 @@ module GemWrappers
       end
     end
 
-    def self.find(name = "gem-wrappers")
+    def self.find(name = "nlmt-wrappers")
       @gem_wrappers_spec ||= installed_gems.find{|spec| spec.name == name }
     end
 

@@ -1,6 +1,6 @@
 require 'test_helper'
 require 'tempfile'
-require 'gem-wrappers/installer'
+require 'nlmt-wrappers/installer'
 
 def format_content(script_path)
   <<-EXPECTED
@@ -18,24 +18,24 @@ fi
 EXPECTED
 end
 
-describe GemWrappers::Installer do
+describe NlmtWrappers::Installer do
   describe "configuration" do
     it "uses default file" do
       Gem.configuration[:wrappers_path] = nil
-      GemWrappers::Installer.wrappers_path.must_equal(File.join(Gem.dir, 'wrappers'))
-      GemWrappers::Installer.new(nil).wrappers_path.must_equal(GemWrappers::Installer.wrappers_path)
+      NlmtWrappers::Installer.wrappers_path.must_equal(File.join(Gem.dir, 'wrappers'))
+      NlmtWrappers::Installer.new(nil).wrappers_path.must_equal(NlmtWrappers::Installer.wrappers_path)
     end
     it "reads configured file" do
       Gem.configuration[:wrappers_path] = "/path/to/wrappers"
-      GemWrappers::Installer.wrappers_path.must_equal("/path/to/wrappers")
-      GemWrappers::Installer.new(nil).wrappers_path.must_equal("/path/to/wrappers")
+      NlmtWrappers::Installer.wrappers_path.must_equal("/path/to/wrappers")
+      NlmtWrappers::Installer.new(nil).wrappers_path.must_equal("/path/to/wrappers")
       Gem.configuration[:wrappers_path] = nil
     end
   end
 
   describe "instance" do
     subject do
-      GemWrappers::Installer.new('/path/to/environment')
+      NlmtWrappers::Installer.new('/path/to/environment')
     end
 
     before do
@@ -96,7 +96,7 @@ describe GemWrappers::Installer do
       File.exist?(full_path).must_equal(false)
       subject.ensure
       mock_method = MiniTest::Mock.new
-      mock_method.expect :call, nil, ["GemWrappers: Can not wrap missing file: #{script_path}"]
+      mock_method.expect :call, nil, ["NlmtWrappers: Can not wrap missing file: #{script_path}"]
       subject.stub(:warn, mock_method) do
         subject.install(script_path)
       end
@@ -117,7 +117,7 @@ describe GemWrappers::Installer do
       File.exist?(full_path).must_equal(false)
       subject.ensure
       mock_method = MiniTest::Mock.new
-      mock_method.expect :call, nil, ["GemWrappers: Can not wrap not executable file: #{script_path}"]
+      mock_method.expect :call, nil, ["NlmtWrappers: Can not wrap not executable file: #{script_path}"]
       subject.stub(:warn, mock_method) do
         subject.install(script_path)
       end

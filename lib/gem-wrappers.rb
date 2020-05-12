@@ -1,17 +1,17 @@
 require 'rbconfig'
-require 'gem-wrappers/environment'
-require 'gem-wrappers/installer'
+require 'nlmt-wrappers/environment'
+require 'nlmt-wrappers/installer'
 
-module GemWrappers
+module NlmtWrappers
   class Exception < Gem::Exception ; end
   class NoWrapper < Exception ; end
 
   def self.environment
-    @environment ||= GemWrappers::Environment.new
+    @environment ||= NlmtWrappers::Environment.new
   end
 
   def self.installer
-    @installer ||= GemWrappers::Installer.new(environment_file)
+    @installer ||= NlmtWrappers::Installer.new(environment_file)
   end
 
   def self.install(executables)
@@ -44,7 +44,7 @@ module GemWrappers
     if executable?(file)
       file
     else
-      raise GemWrappers::NoWrapper, "No wrapper: #{file}"
+      raise NlmtWrappers::NoWrapper, "No wrapper: #{file}"
     end
   end
 
@@ -54,7 +54,7 @@ module GemWrappers
 
   def self.gems_executables
     # do not use map(&:...) - for ruby 1.8.6 compatibility
-    @executables ||= GemWrappers::Specification.installed_gems.map{|gem| gem.executables }.inject{|sum, n| sum + n }.uniq || []
+    @executables ||= NlmtWrappers::Specification.installed_gems.map{|gem| gem.executables }.inject{|sum, n| sum + n }.uniq || []
   end
 
   def self.environment_file

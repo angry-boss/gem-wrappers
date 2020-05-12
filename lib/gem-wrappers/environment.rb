@@ -1,7 +1,7 @@
 require 'erb'
 require 'fileutils'
 
-module GemWrappers
+module NlmtWrappers
   class Environment
 
     def self.file_name
