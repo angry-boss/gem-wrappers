@@ -15,6 +15,13 @@ Gem::Specification.new do |s|
   s.extensions  = %w( ext/wrapper_generator/extconf.rb )
   s.files = `git ls-files`.split("\n")
   s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
+
+  s.bindir        = "bin"
+  s.executables   = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  s.require_paths = ["lib"]
+
+  s.add_dependency "bundler", "~> 2.1.2"
+  #s.add_dependency 'pry', '~> 0.13.1'
   s.add_development_dependency("rake", "<11")
   s.add_development_dependency("minitest", "<6")
   # s.add_development_dependency("smf-gem")
