@@ -4,8 +4,6 @@ before_install:
   - "if [[ $TRAVIS_RUBY_VERSION == 1.9.3 ]] ; then gem install bundler "~> 2.1.2" ; fi"
 rvm:
   - ruby-head
-  - 1.8.7
-  - 1.9.3
   - 2.0.0
   - 2.1
   - 2.2
