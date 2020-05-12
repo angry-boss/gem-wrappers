@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "bundler", "~> 2.1.2"
   #s.add_dependency 'pry', '~> 0.13.1'
-  s.add_development_dependency("rake", "<11")
+  s.add_development_dependency("rake", "~> 12.3.3")
   s.add_development_dependency("minitest", "<6")
   # s.add_development_dependency("smf-gem")
 end
