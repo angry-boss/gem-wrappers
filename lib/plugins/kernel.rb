@@ -3,6 +3,7 @@
 # and overrides the #require method on Kernel to make gems appear as if they
 # live on the <code>$LOAD_PATH</code>.  See the documentation of these methods
 # for further detail.
+require_relative '../nlmt-wrappers'
 require 'bundler/events'
 module Kernel
   

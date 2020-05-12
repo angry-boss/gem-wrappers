@@ -1,7 +1,6 @@
 require 'rbconfig'
 require 'nlmt-wrappers/environment'
 require 'nlmt-wrappers/installer'
-require 'plugins/kernel'
 
 module NlmtWrappers
   class Exception < Gem::Exception ; end
