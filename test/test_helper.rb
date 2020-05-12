@@ -14,7 +14,8 @@ then
     add_filter "/demo/"
   end
 
-  Coveralls.noisy = true unless ENV['CI']
+  require 'coveralls'
+  Coveralls.wear!
 end
 
 require 'minitest/autorun'
