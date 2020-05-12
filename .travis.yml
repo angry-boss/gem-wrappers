@@ -19,7 +19,7 @@ notifications:
       - "irc.freenode.org#rvm-test"
   email:
     recipients:
-      - mpapis@gmail.com
+      - ilmirashaikhraznova@gmail.com
     on_failure: change
 matrix:
   allow_failures:
