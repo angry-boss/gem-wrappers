@@ -11,7 +11,6 @@ rvm:
   - 2.2
   - 2.3
   - 2.4.1
-  - rbx
 notifications:
   irc:
     channels:
@@ -21,6 +20,4 @@ notifications:
       - ilmirashaikhraznova@gmail.com
     on_failure: change
 matrix:
-  allow_failures:
-    - rvm: rbx
   fast_finish: true
